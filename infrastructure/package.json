@@ -1,0 +1,28 @@
+{
+  "name": "resume-ranking-infrastructure",
+  "version": "1.0.0",
+  "description": "CDK infrastructure for Resume Ranking System with AppSync and Cognito",
+  "main": "lib/resume-ranking-stack.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^20.0.0",
+    "aws-cdk": "^2.200.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "~5.0.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-amplify-alpha": "^2.200.1-alpha.0",
+    "aws-cdk-lib": "^2.200.0",
+    "constructs": "^10.0.0"
+  }
+}

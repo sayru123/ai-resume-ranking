@@ -1,0 +1,18 @@
+// Frontend Configuration Template
+// This file is processed by the deployment script to inject environment variables
+
+window.AWS_CONFIG = {
+    region: '${AWS_REGION}',
+    userPoolId: '${USER_POOL_ID}',
+    userPoolWebClientId: '${USER_POOL_CLIENT_ID}',
+    identityPoolId: '${IDENTITY_POOL_ID}',
+    graphqlEndpoint: '${GRAPHQL_ENDPOINT}',
+    apiId: '${API_ID}'
+};
+
+// Configuration validation
+if (!window.AWS_CONFIG.userPoolId || !window.AWS_CONFIG.graphqlEndpoint) {
+    console.error('❌ AWS configuration is incomplete. Check environment variables.');
+} else {
+    console.log('✅ AWS configuration loaded:', window.AWS_CONFIG);
+}

@@ -1,0 +1,205 @@
+type Attachment {
+  id: ID!
+  filename: String!
+  contentType: String!
+  content: String
+  size: Int!
+  createdAt: AWSDateTime!
+  downloadUrl: String
+  processingStatus: ProcessingStatus!
+}
+
+type ParsedResume {
+  id: ID!
+  attachmentId: ID!
+  attachment_id: ID!  # Snake case version for compatibility
+  raw_text_s3_key: String!
+  text_length: Int!
+  text_preview: String!
+  parsingStatus: String!
+  parsing_status: String!  # Snake case version for compatibility
+  createdAt: AWSDateTime!
+  created_at: AWSDateTime!  # Snake case version for compatibility
+  attachment: Attachment
+}
+
+type ResumeInformation {
+  id: ID!
+  parsed_resume_id: ID!
+  extraction_confidence: Float
+  summary: String!
+  
+  # Core AI Analysis Fields (optimized for DynamoDB)
+  candidate_name: String!
+  experience_years: Int!
+  experience_level: String!
+  total_skills: Int!
+  overall_score: Int!
+  skill_diversity: Int!
+  fit_assessment: String!
+  
+  # Essential data (truncated for size) - NEW OPTIMIZED FIELDS
+  key_skills: [String!]!
+  top_strengths: [String!]!
+  top_recommendations: [String!]!
+  
+  # S3 references for detailed data
+  detailed_analysis_s3_key: String!
+  raw_text_s3_key: String!
+  
+  created_at: AWSDateTime!
+  
+  # Legacy camelCase fields for backward compatibility
+  parsedResumeId: ID!
+  candidateName: String!
+  experienceYears: Int!
+  experienceLevel: ExperienceLevel!
+  totalSkills: Int!
+  overallScore: Int!
+  skillDiversity: Int!
+  fitAssessment: FitLevel!
+  keySkills: [String!]!
+  extractionConfidence: Float
+  
+  # Legacy fields mapped to new optimized fields
+  strengths: [String!]!  # Maps to top_strengths
+  recommendations: [String!]!  # Maps to top_recommendations
+  skills: [String!]!  # Maps to key_skills
+  detailed_summary: String!  # Maps to summary
+  key_achievements: [String!]!  # Default empty array
+  education: [String!]!  # Default empty array
+  certifications: [String!]!  # Default empty array
+  skill_breakdown: AWSJSON!  # Default empty object
+  yearsOfExperience: Int  # Maps to experience_years
+  contactInfo: ContactInfo
+  
+  createdAt: AWSDateTime!
+  parsedResume: ParsedResume
+}
+
+type SkillBreakdown {
+  Programming: Int!
+  Frontend: Int!
+  Backend: Int!
+  Database: Int!
+  Cloud: Int!
+  AI_ML: Int!
+  DevOps: Int!
+  Mobile: Int!
+}
+
+type ContactInfo {
+  name: String
+  email: String
+  phone: String
+}
+
+type SystemHealth {
+  status: String!
+  totalResumes: Int!
+  processedResumes: Int!
+  successRate: Float!
+  lastProcessedAt: AWSDateTime
+  bedrockStatus: String!
+  databaseStatus: String!
+  
+  # Enhanced Analytics
+  averageScore: Float!
+  topSkills: [String!]!
+  experienceLevels: ExperienceLevelStats!
+}
+
+type ExperienceLevelStats {
+  Junior: Int!
+  Mid: Int!
+  Senior: Int!
+  Lead: Int!
+  Executive: Int!
+}
+
+type ProcessingResult {
+  success: Boolean!
+  message: String!
+  attachmentId: ID
+}
+
+type MonitorResult {
+  success: Boolean!
+  message: String!
+  newFilesFound: Int!
+  processedFiles: [String!]!
+}
+
+# Enhanced Resume List with Ranking
+type RankedResume {
+  id: ID!
+  filename: String!
+  candidateName: String!
+  overallScore: Int!
+  experienceLevel: ExperienceLevel!
+  experienceYears: Int!
+  totalSkills: Int!
+  fitAssessment: FitLevel!
+  keySkills: [String!]!
+  createdAt: AWSDateTime!
+  processingStatus: ProcessingStatus!
+  downloadUrl: String
+  rank: Int!
+}
+
+enum ProcessingStatus {
+  UPLOADED
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum ExperienceLevel {
+  ENTRY
+  JUNIOR
+  MID
+  SENIOR
+  LEAD
+  EXECUTIVE
+}
+
+enum FitLevel {
+  LOW
+  MEDIUM
+  HIGH
+  EXCELLENT
+}
+
+type Query {
+  # Enhanced Resume Management
+  listResumes: [Attachment!]!
+  listParsedResumes: [ParsedResume!]!
+  listRankedResumes(sortBy: String, filterBy: String): [RankedResume!]!
+  listResumeAnalyses: [ResumeInformation!]!
+  getResume(id: ID!): Attachment
+  getResumeAnalysis(attachmentId: ID!): ResumeInformation
+  
+  # Advanced Analytics
+  getSystemHealth: SystemHealth!
+  getAnalytics: SystemHealth!
+  getTopCandidates(limit: Int): [RankedResume!]!
+  getSkillAnalytics: [SkillStat!]!
+}
+
+type SkillStat {
+  skill: String!
+  count: Int!
+  averageScore: Float!
+}
+
+type Mutation {
+  # Processing Operations
+  processResume(s3Key: String!): ProcessingResult!
+  triggerS3Monitor: MonitorResult!
+}
+
+type Subscription {
+  # Real-time Updates
+  onResumeProcessed: ResumeInformation
+  onSystemHealthUpdated: SystemHealth
+}

@@ -412,7 +412,7 @@ python3 scripts/deploy-frontend.py
 
 ## 💰 **Pricing & Cost Analysis**
 
-### **📊 Monthly Cost Estimates (US East 1) - CORRECTED**
+### **📊 Monthly Cost Estimates (US East 1)**
 
 #### **Small Scale (100 resumes/month)**
 - **AWS Lambda**: ~$0.02 (100 invocations × 5 seconds × 512MB = ~$0.0000083 per invocation)

